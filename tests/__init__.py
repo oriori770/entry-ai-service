@@ -1,1 +1,1 @@
-"""Test Suite for Tishrei AI Service"""
+"""Test Suite for Entry AI Service"""

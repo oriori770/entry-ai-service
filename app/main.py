@@ -23,8 +23,8 @@ def create_app() -> FastAPI:
 
     app = FastAPI(
         title=settings.app_name,
-        description="AI Microservice for Tishrei Attendance & Entry Management",
-        version="1.0.0",
+        description=settings.app_description,
+        version=settings.app_version,
         docs_url="/docs",
         redoc_url="/redoc",
         lifespan=lifespan,
@@ -47,6 +47,7 @@ def create_app() -> FastAPI:
     async def root():
         return {
             "message": f"{settings.app_name} is running",
+            "version": settings.app_version,
             "docs": "/docs",
             "health": "/api/ai/health",
         }

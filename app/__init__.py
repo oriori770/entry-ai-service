@@ -1,1 +1,1 @@
-"""Tishrei AI Service Application Package"""
+"""Entry AI Service Application Package"""

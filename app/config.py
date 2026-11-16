@@ -7,6 +7,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     app_name: str = "Entry AI Service"
+    app_version: str = "1.0.0"
+    app_description: str = "AI Microservice for Entry Attendance & Management"
     port: int = 8000
     host: str = "0.0.0.0"
     environment: str = "development"

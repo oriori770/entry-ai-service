@@ -9,6 +9,6 @@ async def health_check(settings: Settings = Depends(get_settings)):
     return {
         "status": "ok",
         "app": settings.app_name,
-        "version": "1.0.0",
+        "version": settings.app_version,
         "environment": settings.environment,
     }
