@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
+from app.database import connect_db, disconnect_db
 from app.logging_config import setup_logging
 from app.routers import health
 
@@ -14,7 +15,9 @@ async def lifespan(app: FastAPI):
     settings = get_settings()
     setup_logging()
     logger.info(f"[bold green]Starting {settings.app_name}[/bold green] on port {settings.port} (env: {settings.environment})")
+    await connect_db()
     yield
+    await disconnect_db()
     logger.info(f"[bold yellow]Shutting down {settings.app_name}[/bold yellow]")
 
 

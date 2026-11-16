@@ -14,6 +14,7 @@ def test_health_check_endpoint():
     assert data["app"] == settings.app_name
     assert data["version"] == settings.app_version
     assert "environment" in data
+    assert "database" in data
 
 
 def test_root_endpoint():
