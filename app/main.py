@@ -26,8 +26,8 @@ def create_app() -> FastAPI:
 
     app = FastAPI(
         title=settings.app_name,
-        description="AI Microservice for Attendance & Entry Management",
-        version="1.0.0",
+        description=settings.app_description,
+        version=settings.app_version,
         docs_url="/docs",
         redoc_url="/redoc",
         lifespan=lifespan,
